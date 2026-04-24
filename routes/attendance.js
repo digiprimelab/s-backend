@@ -7,7 +7,8 @@ const fs = require('fs');
 const Papa = require('papaparse');
 const path = require('path');
 
-const upload = multer({ dest: 'uploads/' });
+// Configure multer to use /tmp directory for Vercel serverless
+const upload = multer({ dest: '/tmp/' });
 
 const parseCSV = (filePath) => {
   const file = fs.readFileSync(filePath, 'utf8');

@@ -5,7 +5,8 @@ const multer = require('multer');
 const csv = require('csv-parser');
 const fs = require('fs');
 
-const upload = multer({ dest: 'uploads/' });
+// Configure multer to use /tmp directory for Vercel serverless
+const upload = multer({ dest: '/tmp/' });
 
 // Helper function to parse CSV
 const parsecsv = (filepath) => {

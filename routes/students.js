@@ -22,7 +22,7 @@ router.get('/export', auth, async (req, res) => {
       PhotoURL: s.photoUrl || ''
     }));
 
-    const filePath = path.join(__dirname, '../temp/students.csv');
+    const filePath = '/tmp/students.csv';
     
     const writer = csvWriter({
       path: filePath,
